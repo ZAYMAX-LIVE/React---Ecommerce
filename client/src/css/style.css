@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+:root {
+  --color-text: #222;
+  --color-text-white: #fff;
+  --background-white: rgba(245, 247, 251, 1);
+  --background-black: rgba(57, 61, 69, 1);
+}
+
+/*header*/
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 70px;
+  background-color: var(--background-white);
+  position: fixed;
+  z-index: 11111;
+}
+header .logo {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1vw;
+  color: var(--color-text);
+}
+header .logo h1 {
+  font-size: 1.7rem;
+}
+header .logo button {
+  width: 6rem;
+  height: 2rem;
+  background-color: var(--background-black);
+  color: var(--color-text-white);
+}
+header .menu {
+  background-color: var(--background-black);
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .menu img {
+  width: 30%;
+  filter: invert(1);
+}
+
+/*main*/
+main {
+  background-color: var(--background-white);
+}
+main .stock {
+  display: flex;
+}
+main .stock .aboutBlock {
+  width: 10%;
+  height: 100vh;
+}
+main .stock .mainBlock {
+  width: 90%;
+  height: 35rem;
+  position: relative;
+}
+main .stock .mainBlock .stockBlock {
+  margin-top: 70px;
+  width: 90%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+main .stock .mainBlock .stockBlock div {
+  height: 100%;
+  transition: 0.8s ease-in-out;
+  width: 80vw;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
+}
+main .stock .mainBlock .stockBlock div .imgBlock img {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
+}
+main .stock .mainBlock .stockBlock div .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5vw;
+}
+main .stock .mainBlock .stockBlock div .info h1 {
+  font-size: 5rem;
+  margin-bottom: 2vw;
+}
+main .stock .mainBlock .stockBlock div .info p:nth-child(2) {
+  font-size: 1rem;
+  color: #333;
+  width: 70%;
+}
+main .stock .mainBlock .stockBlock div .info p:nth-child(3) {
+  margin: 2vw 0;
+}
+main .stock .mainBlock .stockBlock div .info p:nth-child(3) span {
+  color: var(--color-text);
+  font-weight: 600;
+}
+main .stock .mainBlock .stockBlock div .info button {
+  width: 10rem;
+  height: 3rem;
+  border: 1px solid #222;
+  background-color: var(--background-white);
+}
+main .ourProductsBlock {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .ourProductsBlock .productTitle {
+  width: 100%;
+  padding: 0 10vw;
+}
+main .ourProductsBlock .productTitle h1 {
+  font-size: 2rem;
+  color: var(--color-text);
+}
+main .ourProductsBlock .menuProduct {
+  margin-top: 3vw;
+  width: 80vw;
+  margin-left: 1vw;
+  background-color: #fff;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+main .ourProductsBlock .menuProduct .menuCateg {
+  background-color: aliceblue;
+  width: 100%;
+  height: 100%;
+}
+main .ourProductsBlock .productsBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  grid-gap: 2vw;
+  margin-top: 5vw;
+  padding: 0 9vw 0 10vw;
+}
+main .ourProductsBlock .productsBlock .prod {
+  height: 70%;
+  position: relative;
+}
+main .ourProductsBlock .productsBlock .prod:hover .textProd {
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+main .ourProductsBlock .productsBlock .prod:hover img {
+  filter: brightness(40%);
+  transition: 0.3s ease-in-out;
+}
+main .ourProductsBlock .productsBlock .prod .textProd {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  z-index: 111;
+  top: 80%;
+  background-color: var(--background-black);
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-white);
+}
+main .ourProductsBlock .productsBlock .prod img {
+  transition: 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item {
+  min-width: 100% !important;
+  height: 100% !important;
+}
+
+.prev,
+.next {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 111;
+}
+
+.prev {
+  top: 50%;
+  left: 6%;
+}
+
+.next {
+  top: 50%;
+  left: 94%;
+}
+
+.cardFull {
+  min-height: 100vh;
+  padding: 5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
